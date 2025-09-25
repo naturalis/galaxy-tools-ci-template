@@ -26,7 +26,7 @@ jobs:
           python-version: '3.9'
 
       - name: Create Planemo config
-        env:
+        secrets:
           USER: ${{ secrets.USER }}
           KEY: ${{ secrets.KEY }}
           EMAIL: ${{ secrets.EMAIL }}
