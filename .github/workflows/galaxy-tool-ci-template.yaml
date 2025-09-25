@@ -2,6 +2,15 @@ name: Galaxy Tool CI/CD Pipeline
 
 on:
   workflow_call:
+    secrets:
+        USER:
+          required: true
+        KEY:
+          required: true
+        EMAIL:
+          required: true
+        PASS:
+          required: true
   push:
     branches: [ main, master ]
     tags:
@@ -26,7 +35,7 @@ jobs:
           python-version: '3.9'
 
       - name: Create Planemo config
-        secrets:
+        env:
           USER: ${{ secrets.USER }}
           KEY: ${{ secrets.KEY }}
           EMAIL: ${{ secrets.EMAIL }}
