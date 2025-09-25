@@ -42,6 +42,7 @@ jobs:
           PASS: ${{ secrets.PASS }}
         run: |
           mkdir -p $HOME/.planemo
+          echo test user: $USER
           cat > $HOME/.planemo.yml << EOF
           shed_username: $USER # your ToolShed username
           sheds:
