@@ -27,19 +27,19 @@ jobs:
 
       - name: Create Planemo config
         env:
-          USER: ${{ secrets.USER }}
-          KEY: ${{ secrets.KEY }}
-          EMAIL: ${{ secrets.EMAIL }}
-          PASS: ${{ secrets.PASS }}
+          USER: ${{ secrets.TOOLSHED_USER_NAME }}
+          KEY: ${{ secrets.TOOLSHED_API_KEY }}
+          EMAIL: ${{ secrets.TOOLSHED_EMAIL }}
+          PASS: ${{ secrets.TOOLSHED_PASS }}
         run: |
           mkdir -p $HOME/.planemo
           cat > $HOME/.planemo.yml << EOF
-          shed_username: $USER # your ToolShed username
+          shed_username: $TOOLSHED_USER_NAME # your ToolShed username
           sheds:
             toolshed:
-              key: $KEY        # your ToolShed API key, under 'User > API Keys'
-              email: $EMAIL    # your ToolShed email
-              password: $PASS  # your ToolShed password
+              key: $TOOLSHED_API_KEY        # your ToolShed API key, under 'User > API Keys'
+              email: $TOOLSHED_EMAIL    # your ToolShed email
+              password: $TOOLSHED_PASS  # your ToolShed password
           EOF
 
       - name: Install Planemo
