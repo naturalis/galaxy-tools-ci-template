@@ -46,4 +46,4 @@ jobs:
         run: pip install planemo
 
       - name: Update Tool Shed
-        run: planemo shed_update --shed_target toolshed
+        run: planemo shed_update -r --shed_target toolshed
